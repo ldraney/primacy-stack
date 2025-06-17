@@ -18,7 +18,7 @@ async function main() {
     FROM board_link l
     JOIN board b1 ON l.from_board_id = b1.id
     JOIN board b2 ON l.to_board_id = b2.id
-    WHERE b1.id = 'leads';
+    WHERE b1.id = 'accounts';
   `);
 
   await client.end();

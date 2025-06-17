@@ -1,17 +1,22 @@
 [
   {
-    "from_board": "Leads",
+    "from_board": "Accounts",
     "to_board": "Dev Deals",
     "relationship_type": "linked-column"
   },
   {
-    "from_board": "Leads",
+    "from_board": "Accounts",
+    "to_board": "Dev Deals",
+    "relationship_type": "linked-column"
+  },
+  {
+    "from_board": "Accounts",
     "to_board": "Prod Deals",
     "relationship_type": "linked-column"
   },
   {
-    "from_board": "Leads",
-    "to_board": "Accounts",
+    "from_board": "Accounts",
+    "to_board": "Prod Deals",
     "relationship_type": "linked-column"
   }
 ]
