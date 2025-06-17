@@ -1,0 +1,21 @@
+{
+  "Board": {
+    "id": "string",
+    "name": "string",
+    "purpose": "string",
+    "columns": ["Column"],
+    "connected_boards": ["BoardLink"],
+    "monday_board_id": "string"
+  },
+  "Column": {
+    "id": "string",
+    "name": "string",
+    "type": "string",
+    "settings": "object"
+  },
+  "BoardLink": {
+    "from_board_id": "string",
+    "to_board_id": "string",
+    "relationship_type": "string"
+  }
+}

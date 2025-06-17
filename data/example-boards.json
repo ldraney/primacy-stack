@@ -1,0 +1,29 @@
+[
+  {
+    "id": "leads_board",
+    "name": "Leads",
+    "purpose": "Track incoming sales leads",
+    "monday_board_id": "123456789",
+    "columns": [
+      {
+        "id": "col1",
+        "name": "Status",
+        "type": "status",
+        "settings": { "labels": ["New", "Contacted", "Qualified"] }
+      },
+      {
+        "id": "col2",
+        "name": "Owner",
+        "type": "person",
+        "settings": {}
+      }
+    ],
+    "connected_boards": [
+      {
+        "from_board_id": "leads_board",
+        "to_board_id": "deals_board",
+        "relationship_type": "linked-column"
+      }
+    ]
+  }
+]

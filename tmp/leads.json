@@ -1,0 +1,12 @@
+[
+  {
+    "from_board": "Leads",
+    "to_board": "Dev Deals",
+    "relationship_type": "linked-column"
+  },
+  {
+    "from_board": "Leads",
+    "to_board": "Prod Deals",
+    "relationship_type": "linked-column"
+  }
+]
