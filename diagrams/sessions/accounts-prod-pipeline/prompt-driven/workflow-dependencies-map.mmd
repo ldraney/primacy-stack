@@ -1,0 +1,27 @@
+graph TD
+    V[Vendors<br/>Contact Info, Comms Log] 
+    P[Purchasing EPOs<br/>Vendor<br/>Status: Ordered → Received]
+    B[Bulk Traceability<br/>Trace Log<br/>Status: Pending → Complete]
+    L[Line Work<br/>Line Steps<br/>Status: In Progress → Done]
+    S[Production SKUs<br/>Status: Waiting on EPOs → Compounding → Line Work Done → Ready to Ship]
+    D[Prod Deals IPOs<br/>Payment Status, SKU Status<br/>Status: Ready to Ship]
+
+    %% Dependencies (Blocked By relationships)
+    V --> P
+    P --> B
+    B --> L
+    P --> S
+    B --> S
+    L --> S
+    S --> D
+
+    %% Styling
+    classDef vendor fill:#e1f5fe
+    classDef purchasing fill:#f3e5f5
+    classDef production fill:#e8f5e8
+    classDef deals fill:#fff3e0
+    
+    class V vendor
+    class P purchasing
+    class B,L,S production
+    class D deals
