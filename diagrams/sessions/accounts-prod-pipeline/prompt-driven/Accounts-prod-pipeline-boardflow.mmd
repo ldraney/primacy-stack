@@ -1,0 +1,15 @@
+graph TD
+
+  AccountsBoard["Accounts Board"]
+  ProdDealsBoard["Prod Deals Board"]
+  ProductionBoard["Production Board"]
+  PurchasingBoard["Purchasing Board"]
+  VendorsBoard["Vendors Board"]
+  ContactsBoard["Contacts Board"]
+
+  AccountsBoard -->|Creates IPO tickets| ProdDealsBoard
+  ProdDealsBoard -->|Creates SKU tickets| ProductionBoard
+  ProductionBoard -->|Creates EPO tickets| PurchasingBoard
+  PurchasingBoard -->|Tracks vendor comms| VendorsBoard
+  VendorsBoard -->|Links to contacts| ContactsBoard
+
