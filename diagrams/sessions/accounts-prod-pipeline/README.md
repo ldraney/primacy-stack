@@ -69,7 +69,54 @@ If multiple diagrams are needed (e.g. detailed vs high-level), they will be stor
 - This diagram represents the current best understanding of how internal operations flow from account initiation to vendor contact.
 - Updates should follow updates to schema structure or feedback from usage.
 
+
 ---
 
-## Next Step
-Once this diagram is complete and committed, begin a new modeling session by copying the structure and evolving the schema.
+## ✅ Files Involved in Making a Diagram (per session)
+
+### 📁 `schema/sessions/accounts-prod-pipeline/`
+
+| File            | Purpose                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| `schema.sql`    | Defines entities (e.g. `accounts`, `ipos`, `skus`, etc.) and their relationships (via `FOREIGN KEY`, etc.) |
+| `mock-data.sql` | Optional test inserts so you can query fake but meaningful data                                            |
+| `README.md`     | Describes what the schema models and what diagram(s) should represent                                      |
+
+---
+
+### 📁 `diagrams/sessions/accounts-prod-pipeline/`
+
+| File        | Purpose                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `flow.mmd`  | The actual Mermaid diagram generated from the schema and/or query output                                                        |
+| `README.md` | Defines acceptance criteria, explains how the diagram is derived from the schema, and serves as a log of diagram intent/purpose |
+
+---
+
+## 🧠 Your Workflow (Confirmed + Clarified)
+
+### To generate a meaningful Mermaid diagram:
+
+1. ✅ Write or update `schema.sql`
+   Define all tables and relationships for the current modeling goal.
+
+2. (Optional) Add `mock-data.sql`
+   Populate minimal but meaningful fake data so you can run example queries.
+
+3. ✅ Write a SQL query that describes a data flow
+   Example:
+
+   ```sql
+   SELECT a.name, i.name, s.name
+   FROM accounts a
+   JOIN ipos i ON i.account_id = a.id
+   JOIN skus s ON s.ipo_id = i.id;
+   ```
+
+4. ✅ Translate the result or schema structure into a `.mmd` file
+   (Eventually we can automate this, but manually is fine for now.)
+
+5. ✅ Save the Mermaid chart as `flow.mmd`
+
+6. ✅ Commit and push changes to GitHub
+
