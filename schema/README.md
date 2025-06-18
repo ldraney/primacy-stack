@@ -1,19 +1,25 @@
-# Schema Overview: Monday System Mapper
+# Schema Directory – Structure and Usage
 
-This directory defines the JSON-based schema used to model Monday.com boards.
+All SQL files are organized into sessions under `schema/sessions/`.
 
-## Models
+## 🔁 What is a Session?
+Each session represents one focused modeling effort to map or extend an operational workflow at Pure Earth Labs. It includes:
+- A `schema.sql` file defining tables and relationships
+- An optional `mock-data.sql` for insertable test data
+- A `README.md` explaining the purpose and scope
 
-### Board
-- `id`: Local ID
-- `name`: Display name
-- `purpose`: Short description
-- `columns`: Array of Column objects
-- `connected_boards`: Array of BoardLink objects
-- `monday_board_id`: Actual Monday board ID (if synced)
+Each session links directly to a diagram session under `/diagrams/sessions/<name>/`.
 
-### Column
-- `id`, `name`, `type`, `settings`
+## 📂 Structure
+```
+schema/
+├── sessions/
+│   ├── init-structure/
+│   │   ├── schema.sql
+│   │   ├── mock-data.sql (optional)
+│   │   └── README.md
+├── README.md
+```
 
-### BoardLink
-- `from_board_id`, `to_board_id`, `relationship_type`
+## 🧠 Why Sessions?
+Sessions support iterative design and traceability. Each schema update is versioned, documented, and tied to visuals or prompts used for understanding and validation.
