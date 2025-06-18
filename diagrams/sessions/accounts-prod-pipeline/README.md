@@ -120,3 +120,19 @@ If multiple diagrams are needed (e.g. detailed vs high-level), they will be stor
 
 6. ✅ Commit and push changes to GitHub
 
+---
+
+### 🗂️ Diagram Organization: Prompt-Driven vs Data-Driven
+
+Diagrams in this session are organized into two categories:
+
+* **`prompt-driven/`**
+  Handcrafted based on operational understanding or system intent (e.g. how boards are linked in Monday). These don’t require database queries — just clarity about structure and flow.
+
+* **`data-driven/`**
+  Generated from SQL queries using mock or real data. These reflect actual states, relationships, or quantities (e.g. which IPOs are still open per account).
+
+This split acknowledges that **effective architecture isn’t always data-bound**. Sometimes structure alone is enough to reason and plan.
+
+Eventually, **prompt-driven diagrams may evolve into data-driven diagrams** as schema and data become available — creating a feedback loop between design and system state.
+
